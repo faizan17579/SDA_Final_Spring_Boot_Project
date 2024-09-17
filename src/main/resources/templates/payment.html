@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Select Payment Method</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .payment-method {
+            margin: 0 30px; /* Adjust the space between payment methods */
+            text-align: center;
+        }
+        .payment-method img {
+            width: 150px; /* Set the width of all images */
+            height: 100px; /* Set the height of all images */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .payment-method img:hover {
+            transform: scale(1.05);
+        }
+        .back-home {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-home a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Select Payment Method</h2>
+    <div class="payment-methods">
+        <div class="payment-method">
+            <a href="/pay"><img src="images/creditcard.jpg" alt="Credit Card"></a>
+            <p>Credit Card</p>
+        </div>
+        <div class="payment-method">
+           <a href="/pay"> <img src="images/paypal.jpg" alt="PayPal"></a>
+            <p>PayPal</p>
+        </div>
+        <div class="payment-method">
+            <a href="/pay"><img src="images/bitcoin.jpg" alt="Bitcoin"></a>
+            <p>Bitcoin</p>
+        </div>
+       
+        <!-- Add more payment methods as needed -->
+    </div>
+    <div class="back-home">
+        <a href="/">Back to Home</a>
+    </div>
+</div>
+</body>
+</html>

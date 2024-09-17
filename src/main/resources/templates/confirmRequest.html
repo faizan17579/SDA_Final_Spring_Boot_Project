@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Service Request</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Confirm Service Request</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Service Provider Details</h5>
+                <p class="card-text">Name: <span th:text="${serviceProvider.name}"></span></p>
+                <p class="card-text">Email: <span th:text="${serviceProvider.email}"></span></p>
+                <p class="card-text">Contact: <span th:text="${serviceProvider.contact}"></span></p>
+                <p class="card-text">Services: <span th:text="${serviceProvider.services}"></span></p>
+                <p class="card-text">Rating: <span th:text="${serviceProvider.rating}"></span></p>
+                
+                <!-- Add more details as needed -->
+                <form action="/submitRequestplumbing" method="post">
+                    <!-- Hidden input to pass provider ID to the server -->
+                    <input type="hidden" name="providerId" th:value="${serviceProvider.id}">
+                    <!-- Other form inputs for the user's details -->
+                    <!-- Add form fields for user's details like name, address, etc. -->
+                    <!-- Add a submit button -->
+                    <button type="submit" class="btn btn-primary">Confirm Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

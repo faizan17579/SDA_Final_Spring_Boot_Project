@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Receipt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .receipt-details {
+            margin-top: 20px;
+        }
+        .receipt-details p {
+            margin: 10px 0;
+        }
+        .back-home {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-home a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Payment Receipt</h2>
+    <div class="receipt-details">
+        <p><strong>Service Type:</strong> <span th:text="${serviceRequest.serviceType}"></span></p>
+        <p><strong>Name:</strong> <span th:text="${serviceRequest.name}"></span></p>
+        <p><strong>Address:</strong> <span th:text="${serviceRequest.address}"></span></p>
+        <p><strong>Details:</strong> <span th:text="${serviceRequest.details}"></span></p>
+        <p><strong>Request Date:</strong> <span th:text="${#dates.format(serviceRequest.requestDate, 'yyyy-MM-dd HH:mm:ss')}"></span></p>
+        <p><strong>Status:</strong> <span th:text="${serviceRequest.status}"></span></p>
+        <!-- Add more details as needed -->
+    </div>
+    <div class="receipt-details">
+    <p><strong>Service Type:</strong> <span th:text="${serviceRequest.serviceType}"></span></p>
+    <!-- Other service request details -->
+    <p><strong>Price:</strong> $<span th:text="${price}"></span></p>
+</div>
+    <div class="back-home">
+        <a href="/">Back to Home</a>
+    </div>
+</div>
+</body>
+</html>

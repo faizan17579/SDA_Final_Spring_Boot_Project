@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Service Request</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Maintenance Service Request Form</h2>
+        <form action="/allprovider" method="post" id="maintenanceServiceRequestForm">
+            <div class="form-group">
+    <label for="name">Your Name</label>
+    <input type="text" class="form-control" id="name" name="name" required>
+</div>
+            <div class="form-group">
+                <label for="details">Details</label>
+                <textarea class="form-control" id="details" name="details" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="serviceType">Service Type</label>
+                <input type="text" class="form-control" id="serviceType" name="serviceType" value="Maintenance" readonly>
+            </div>
+            <div class="form-group">
+                <label for="requestDate">Request Date</label>
+                <input type="date" class="form-control" id="requestDate" name="requestDate" required>
+            </div>
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select class="form-control" id="status" name="status" required>
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Request</button>
+        </form>
+    </div>
+
+</body>
+</html>

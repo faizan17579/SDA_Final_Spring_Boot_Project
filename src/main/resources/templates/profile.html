@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Service Provider Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .profile-card {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 400px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .profile-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .profile-card img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .profile-card h1 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .profile-card p {
+            margin: 10px 0;
+            color: #666;
+        }
+        .profile-card .actions {
+            margin-top: 20px;
+        }
+        .profile-card .actions button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+        .profile-card .actions button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <img src="images/logo.png" alt="Profile Picture" />
+        <h1 th:text="${serviceProvider.name}">Service Provider Name</h1>
+        <p><strong>Age:</strong> <span th:text="${serviceProvider.age}">30</span></p>
+        <p><strong>Email:</strong> <span th:text="${serviceProvider.email}">email@example.com</span></p>
+        <p><strong>Contact:</strong> <span th:text="${serviceProvider.contact}">123-456-7890</span></p>
+        <p><strong>Services:</strong> <span th:text="${serviceProvider.services}">Plumbing, Electrical</span></p>
+        <p><strong>Details:</strong> <span th:text="${serviceProvider.details}">Expert in home repairs</span></p>
+        <p><strong>Rating:</strong> <span th:text="${serviceProvider.rating}">4.5</span></p>
+       <form th:action="@{/allRequestsPage}" method="post">
+    <button type="submit">View All Requests</button>
+</form>
+        
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Service Provider Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .info {
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Service Provider Profile</h1>
+        <p>Name: <span th:text="${serviceproviderprofile.name}" class="info"></span></p>
+        <p>Age: <span th:text="${serviceproviderprofile.age}" class="info"></span></p>
+        <p>Email: <span th:text="${serviceproviderprofile.email}" class="info"></span></p>
+        <p>Contact: <span th:text="${serviceproviderprofile.contact}" class="info"></span></p>
+        <p>Detail: <span th:text="${serviceproviderprofile.details}" class="info"></span></p>
+        <p>Services: <span th:text="${serviceproviderprofile.services}" class="info"></span></p>
+        <p>Rating: <span th:text="${serviceproviderprofile.rating}" class="info"></span></p>
+    </div>
+</body>
+</html>
+

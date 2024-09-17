@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Requests</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+        h2 {
+            color: #333;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+            cursor: pointer;
+        }
+        .actions {
+            margin-top: 20px;
+        }
+        .actions a, .actions button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+        .actions a:hover, .actions button:hover {
+            background-color: #0056b3;
+        }
+        .complete-btn {
+            background-color: #28a745;
+        }
+        .complete-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h2>All Requests</h2>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Details</th>
+                <th>Address</th>
+                <th>Service Type</th>
+                <th>Request Date</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iterate over serviceRequestList -->
+            <tr th:each="request : ${serviceRequestList}">
+                <td th:text="${request.id}"></td>
+                <td th:text="${request.name}"></td>
+                <td th:text="${request.details}"></td>
+                <td th:text="${request.address}"></td>
+                <td th:text="${request.serviceType}"></td>
+                <td th:text="${request.requestDate}"></td>
+                <td th:text="${request.status}"></td>
+                <td>
+                    <form th:action="@{/completeRequest/{id}(id=${request.id})}" method="post">
+                        <button type="submit" class="complete-btn">Complete</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="actions">
+        <a href="/">Home</a>
+    </div>
+</body>
+</html>
